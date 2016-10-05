@@ -27,12 +27,3 @@ data.frame(Tiempo=t, IntNominal=rt(t), CapFinal=Cf)
 
 
 
-##### Funcion de supervivencia #####
-
-t <- seq(0,120, length.out = 121)
-Ft <- 1-(1-t/120)^(1/6)
-St <- 1-Ft
-
-
-
-
