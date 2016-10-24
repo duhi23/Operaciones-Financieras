@@ -1,0 +1,57 @@
+\documentclass[11pt,a4paper,oneside]{article}
+\usepackage{amsmath,amsthm,amsfonts,amssymb}
+\usepackage{pst-eucl,pstricks,pstricks-add}
+\usepackage[utf8]{inputenc}
+%\usepackage[latin1]{inputenc}
+\usepackage[spanish,activeacute]{babel}
+\usepackage[a4paper,margin=2.2cm]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{color}
+\usepackage{url}
+\usepackage{float}
+\usepackage{cite}
+\usepackage{graphicx}
+\usepackage{multicol}
+\usepackage{float}
+\usepackage{rotating}
+
+\setlength\parindent{0pt}
+
+\newcommand{\nd}[3]{\mbox{$_{#1}\,\mbox{\textsf{\large #2}}\,_{#3}$}}
+
+\title{\bf Análisis de Operaciones Financieras}
+\author{Diego Paul Huaraca S}
+\date{\today}
+
+\begin{document}
+\maketitle
+
+\section{Interés equivalente bajo capitalización compuesta}
+
+Interés nominal $j^{(m)}$ e interés nominal subperiodal $i^{(m)}$:
+\[\frac{j^{(m)}}{m}=i^{(m)}\]
+Interés anual equivalente:
+\[i=\left(1+i^{(m)}\right)^{m}-1=\left(1+\frac{j^{(m)}}{m}\right)^{m}-1\]
+Consideraremos a $r(t)$ como el tipo de interés instantáneo o capitalizable continuamente, referido al instante $t$.
+\[r(t)=\lim_{m\to +\infty} j^{(m)}(t)\]
+A partir de una inversión de $C_0$ unidades monetarias (u.m.) en $t=t_0$ se tiene que:
+\[C(t)=C_0\exp\left\{\int_{t_0}^{t} r(s) ds\right\}\]
+
+\section{Factor y función de acumulación}
+El factor de acumulación correspondiente al plazo $[t_0, t_1]$ es el número real:
+\[A(t_0, t_1)=\exp\left\{\int_{t_0}^{t_1} r(s) ds\right\}\]
+La función de acumulación $a(t_0,t):t\to \mathbb{R}$ para $t\geq t_0$ se define como:
+\[a(t_0, t_1)=\exp\left\{\int_{t_0}^{t} r(s) ds\right\}\]
+{\bf Propiedades:}
+      \begin{enumerate}
+            \item $a(t_0,t)\geq 1$
+            \item $a(t_0,t_0)=1$
+            \item Para todo $t_0<t_1<t_2$ se verifica que: $a(t_0,t_1) < a(t_0,t_2)$, es decir, la función es creciente respecto a $t$.
+            \item {(\bf Principio de consistencia de factores)} Para todo $t_0<t_1<t_2$ se verifica que:
+            \[a(t_0,t_2)=a(t_0,t_1).A(t_1,t_2) \quad \text{ o su equivalente }\quad A(t_0,t_2)=A(t_0,t_1).A(t_1,t_2)\]
+            \item El tipo de interés instantáneo puede ser obtenido como:
+            \[r(s)=\frac{d \ln a(t_0,t)}{dt}=\frac{\frac{d a(t_0,t)}{dt}}{a(t_0,t)}\]
+      \end{enumerate}
+
+
+\end{document}
